@@ -49,7 +49,7 @@ Berikut ini merupakan ilustrasi dari project yang dibuat. <br>
    docker run --mount
    ```
 
-7.  Make sure that no containers are in an good condition
+7.  Make sure that no containers are in unhealthy condition
    ```
    docker ps
    ```
@@ -74,7 +74,7 @@ Berikut ini merupakan ilustrasi dari project yang dibuat. <br>
 
 ## Data Pipeline
 ### The DAG list
-![DAG-list](https://github.com/vnobets7/Digital-Skola-FTDE-Mini-Project3/blob/main/images/DAG-list.PNG)
+![DAG-list](https://github.com/vnobets7/Digital-Skola-FTDE-Mini-Project3/blob/557219995b8ae29cb5c3920f24882b7ed195c428/images/dbeaver-TiDB.png)
 
 ### The graph view
 ![airflow-task](https://github.com/vnobets7/Digital-Skola-FTDE-Mini-Project3/blob/main/images/airflow-task.PNG)
@@ -88,7 +88,7 @@ Berikut ini merupakan ilustrasi dari project yang dibuat. <br>
    docker exec -it [images id] bash
    ```
 * Output:
-![data-on-TiDB](https://github.com/vnobets7/Digital-Skola-FTDE-Mini-Project3/blob/main/images/data-on-TiDB.PNG)
+![data-on-TiDB](https://github.com/vnobets7/Digital-Skola-FTDE-Mini-Project3/blob/557219995b8ae29cb5c3920f24882b7ed195c428/images/data-on-TiDB.PNG)
 
 ## API Spec on TiDB
 ### top_country API
@@ -134,6 +134,75 @@ Response:
       "end_ms": 1725719752784,
       "latency": "730ms",
       "row_count": 109,
+      "row_affect": 0,
+      "limit": 1000
+    }
+  }
+}
+```
+
+### top_country API
+Request: 
+- Method : GET
+- Endpoint : /test/top_country
+- Header :
+    - Accept: application/json
+
+Response:
+```
+{
+  "type": "sql_endpoint",
+  "data": {
+    "columns": [
+      {
+        "col": "index",
+        "data_type": "BIGINT",
+        "nullable": true
+      },
+      {
+        "col": "country",
+        "data_type": "VARCHAR",
+        "nullable": true
+      },
+      {
+        "col": "total",
+        "data_type": "BIGINT",
+        "nullable": true
+      },
+      {
+        "col": "date",
+        "data_type": "DATE",
+        "nullable": true
+      }
+    ],
+    "rows": [
+      {
+        "country": "Chad",
+        "date": "2024-09-05",
+        "index": "0",
+        "total": "1"
+      },
+      {
+        "country": "Anguilla",
+        "date": "2024-09-05",
+        "index": "1",
+        "total": "1"
+      },
+      {
+        "country": "Paraguay",
+        "date": "2024-09-05",
+        "index": "2",
+        "total": "3"
+      },
+      ...
+      ],
+    "result": {
+      "code": 200,
+      "message": "Query OK!",
+      "start_ms": 1725808774545,
+      "end_ms": 1725808776190,
+      "latency": "1.645s",
+      "row_count": 16,
       "row_affect": 0,
       "limit": 1000
     }
