@@ -16,7 +16,7 @@ Bagian dari tugas Fast-Track homework, yang merupakan tugas individual. Membuat 
 
 ##  Simple Project Architecture
 Berikut ini merupakan ilustrasi dari project yang dibuat. <br>
-![Project Architecture]((https://github.com/vnobets7/Digital-Skola-FTDE-Mini-Project3/blob/main/images/system-architecture.png)
+![Project Architecture](https://github.com/vnobets7/Digital-Skola-FTDE-Mini-Project3/blob/main/images/system-architecture.png)
 
 ## Getting Started
 1. Clone the repository:
